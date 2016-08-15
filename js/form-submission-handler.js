@@ -1,6 +1,3 @@
-/**
- * Created by Unaka Muigai on 8/11/2016.
- */
 function validEmail(email) { // see:
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     return re.test(email);
@@ -40,7 +37,9 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
             console.log( xhr.status, xhr.statusText )
-            console.log(xhr.responseText);
+            console.log(xhr.responseText);/*
+            document.getElementById('gform').style.display = 'none'; // hide form
+            document.getElementById('thankyou_message').style.display = 'block';*/
             return;
         };
         // url encode form data for sending as post data

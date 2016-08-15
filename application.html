@@ -10,23 +10,23 @@
 </head>
 <body ng-controller="AppCtrl as ctrl">
 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
-<form name="form" id="gform" method="POST"
-      action="https://script.google.com/a/macros/resilientcoders.org/s/AKfycbz4uP9RVfCqFwyFa_n0hzWVyO5KnXAPC55DBPZr7ypF2JWknNA/exec">
-    <input type="text" ng-model="name" placeholder="name" name="name"/>
-    <input type="text" ng-model="organization" placeholder="organization" name="organization"/>
-    <input type="email" ng-model="email" placeholder="email" name="email"/>
-    <input type="text" ng-model="telephone" placeholder="telephone" name="telephone"/>
-
+<form name="gform" id="gform" novalidate method="POST" class="pure-form pure-form-stacked"
+      action="https://script.google.com/a/macros/resilientcoders.org/s/AKfycbzScpu_YmPT5tiG7ZAH3F47MEP_Wx2yT9nvkrQo2WBUVQETrIFW/exec">
+    <input id="name" type="text" ng-model="name" placeholder="name" name="name"/>
+    <input id="organization" type="text" ng-model="organization" placeholder="organization" name="organization"/>
+    <input id="email" type="email" ng-model="email" placeholder="email" name="email"/>
+    <input id="telephone" type="text" ng-model="telephone" placeholder="telephone" name="telephone"/>
     <h2>Does your ED approve of this applcation?</h2>
     <ul>
         <li>
-            <input id="approval"type="radio" ng-model="approval" name="approval" value="Yes"/>
+            <input id="approval" type="radio" ng-model="approval" name="approval" value="Yes"/>
             <label for="approval">Yes</label>
-            <div class="check"></div>
+            <div class="check" ng-click="checked"></div>
         </li>
 
         <li>
@@ -50,6 +50,11 @@
     <textarea id="whyYou" ng-model="whyYou" ng-keypress="limit()" ng-init="count = 0" name="whyYou"></textarea>
     <button type="submit" >Submit Application</button>
 </form>
+
+<!--
+<script data-cfasync="false" type="text/javascript"
+        src="https://cdn.rawgit.com/nelsonic/html-form-send-email-via-google-script-without-server/master/jquery-ajax-form-handler.js"></script>
+-->
 
 <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
 
