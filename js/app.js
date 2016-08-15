@@ -13,11 +13,11 @@ angular.module('Application', ['ngSanitize'] )
              })*!/
 
         }*/
-        $scope.isComplete = function() {
+   /*     $scope.isComplete = function() {
             if () {
 
             } else if () {
 
             }
-        }
+        }*/
     });
