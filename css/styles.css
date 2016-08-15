@@ -36,7 +36,8 @@ h2 {
     font-size: 2em;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
-    margin: .95em 0;
+    margin-bottom: .95em;
+    margin-top: 0;
     color: #333;
 }
 
@@ -47,7 +48,7 @@ h4 {
 
 fieldset {
     padding: 10px;
-    margin: 20px;
+    margin: 2em 1em;
     border: none;
     display: flex;
     width: 45%;
@@ -69,7 +70,18 @@ input[type="text"], input[type="email"]  {
     color: #666;
     font-family: "Roboto Slab", serif;
     font-size: 1em;
+    margin-bottom: 1.2em;
 }
+
+input[type="text"].ng-invalid.ng-touched, input[type="email"].ng-invalid.ng-touched,
+input[type="text"].ng-empty.ng-touched, input[type="email"].ng-empty.ng-touched  {
+    border-bottom: 2px solid #fa4a5e;
+}
+
+input[type="text"].ng-valid.ng-touched, input[type="email"].ng-valid.ng-touched {
+    border-bottom: 2px solid #50c878;
+}
+
 
 textarea {
     width: 100%;
@@ -95,6 +107,7 @@ input[type=radio]{
 label {
     margin: 10px 0;
     color: #666;
+    margin-top: 0;
 }
 
 ul {
