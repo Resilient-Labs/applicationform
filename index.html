@@ -14,8 +14,6 @@
 </head>
 <body ng-controller="AppCtrl as ctrl" ng-cloak>
 
-
-
 <header>
     <div>
         <a href="http://www.resilientcoders.org"><img src="logo.png"></a>
@@ -23,7 +21,7 @@
     </div>
 </header>
 
-<form name="gform" id="gform" method="POST"
+<form name="gform" id="gform" method="POST" ng-submit="isValidForm()"
       action="https://script.google.com/macros/s/AKfycbyeBSQcoXWiN4z-rpcnMpDWxpIej-HF1KzzQJ_TPC3LFSG4g9o/exec">
     <fieldset>
         <label for="name">Name</label>
@@ -35,10 +33,10 @@
         <label for="email">Email</label>
         <input id="email" type="email" ng-model="email" name="email"/>
 
-        <label for="telephone">Telephone</label>
+        <label for="telephone">Phone</label>
         <input id="telephone" type="text" ng-model="telephone" name="telephone"/>
 
-        <h2>Does your Executive Director approve of this applcation?</h2>
+        <h2>Does your Executive Director approve of this application?</h2>
         <ul>
             <li>
                 <input id="approval" type="radio" ng-checked="checked" name="approval" value="Yes"/>
@@ -64,12 +62,12 @@
     <fieldset>
         <h2>Who's our point of contact on this project? (if not you)</h2>
         <label for="contactEmail">Contact Email</label>
-        <input type="email" id="contactEmail" ng-model="otherEmail" name="contactEmail"/>
+        <input type="email" id="contactEmail" ng-model="contactEmail"  name="contactEmail"/>
 
         <h2>We appreciate answers that are precise and to the point. <br>Please, no more than 500 words.</h2>
         <h4>Why should we pick your organization? How will building a website or microsite advance your mission in a meaningful way?</h4>
 
-        <textarea id="whyYou" ng-model="whyYou" ng-keypress="limit()" ng-init="count = 0" name="whyYou"></textarea>
+        <textarea id="whyYou" ng-model="whyYou" maxlength="3000" name="whyYou"></textarea>
         <button class="hvr-sweep-to-right" type="submit" >Submit Application</button>
     </fieldset>
 </form>

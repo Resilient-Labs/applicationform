@@ -32,9 +32,8 @@ header h2 {
 }
 
 h2 {
-    font-family: "league gothic", helvetica, sans-serif;
-    font-size: 2em;
-    text-transform: uppercase;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.5em;
     -webkit-font-smoothing: antialiased;
     margin-bottom: .95em;
     margin-top: 0;
@@ -42,7 +41,7 @@ h2 {
 }
 
 h4 {
-    font-family: "Roboto Slab", serif;
+    font-family: helvetica, sans-serif;
     color: #666;
 }
 
@@ -158,6 +157,7 @@ ul li .check{
 
 ul li:hover .check {
     border: 5px solid #333;
+    cursor: pointer;
 }
 
 ul li .check::before {
@@ -262,4 +262,61 @@ button:hover {
     border-radius: 4px;
 }
 
+
+@media all and (min-width: 640px) and (max-width: 1024px) {
+    body {
+        width: 98%;
+    }
+
+    fieldset {
+        width: 100%;
+        margin: 2em 1em 0 1em;
+    }
+
+    button {
+        width: 100%;
+        max-width: 666px;;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    textarea {
+        font-size: 1.3em;
+    }
+}
+
+@media all and (min-width: 240px) and (max-width:640px) {
+    input[type="text"], input[type="email"] {
+        width: 96%;
+    }
+
+    fieldset {
+        width: 100%;
+        margin: 2em 1em 0 1em;
+    }
+
+    header div {
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+    }
+
+    header img {
+        height: 5em;
+    }
+
+    h2 {
+        font-size: 1.25em;
+    }
+
+    textarea {
+        height: 300px;
+        font-size: 1.1em;
+    }
+
+    button {
+        height: 3em;
+        width: 240px;
+        margin: 2em auto;
+    }
+}
 

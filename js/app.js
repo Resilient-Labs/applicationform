@@ -1,23 +1,17 @@
 angular.module('Application', ['ngSanitize'] )
     .controller('AppCtrl', function ($scope) {
 
-/*        $scope.limit = function() {
-            console.log("keypress");
-        /!*    var space = " ";
-             var textArray = [];
-             textArray.push($scope.whyYou);
-             angular.forEach(textArray, function() {
-             if ($scope.whyYou.match(' ')) {
-             $scope.count = $scope.count + 1;
-             }
-             })*!/
+        $scope.isValidContact = function() {
+            return $scope.name !== undefined && $scope.email !== "" && $scope.telephone !== "" && $scope.organization !== ""
+        };
 
-        }*/
-   /*     $scope.isComplete = function() {
-            if () {
+        $scope.isValidExplanation = function() {
+            return $scope.whyYou !== undefined;
+        };
 
-            } else if () {
-
-            }
-        }*/
+        $scope.isValidForm = function() {
+            var statement = "This returned this boolean: ";
+            console.log( statement + $scope.isValidContact() && $scope.isValidExplanation());
+            return $scope.isValidContact() && $scope.isValidExplanation();
+        }
     });
