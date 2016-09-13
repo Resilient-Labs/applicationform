@@ -10,69 +10,118 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+
 </head>
 <body ng-controller="AppCtrl as ctrl" ng-cloak>
 
-<header>
-    <div>
-        <a href="http://www.resilientcoders.org"><img src="logo.png"></a>
-        <h2>Application Form</h2>
+<section>
+    <div class="resilient-bg">
+        <div>
+            <h1 class="align-center">Resilient Rebuild!</h1>
+            <p class="align-center">Win a (re)BUILD of your website!</p>
+
+            <span class="divider align-center"></span>
+
+            <p>
+                In partnership with <a href="http://www.freshtilledsoil.com/" target="_blank">Fresh Tilled Soil</a> we will (re)build a website for a non-profit organization for free.
+                Three finalists will be selected by our panel of judges, and then we’ll hand it over to the general public to vote for the winner.
+            </p>
+
+            <p>
+                We're proud to offer a single round of design work and a static website that reflects that design.
+                Extra features may not be supported, per our discretion. The website created may be referenced by
+                Resilient Lab as a case study and sample of our work. Ongoing support after the site is finished
+                is not included. Hosting solutions not provided, though we're happy to advise you on your hosting.
+                Finalists will be asked for all of the final copy and imagery to be used in the new website,
+                during the public voting period. Any organization that hasn’t gotten this material to us
+                before voting ends will not be considered, even if they get the most votes.
+                We’ll ask the winning organization to send us a point of contact to join us for a kickoff meeting.
+            </p>
+
+            <h2>Timeline</h2>
+            <ul>
+                <li>September 14: The competition launches</li>
+                <li>October 5: Application site closes</li>
+                <li>October 12: Three finalists selected</li>
+                <li>October 17: Public voting campaign commences</li>
+                <li>November 1: Winner announced</li>
+                <li>November 2: Project begins</li>
+                <li>November 4: Winner is available for full day planning session</li>
+                <li>December 16: Website ready to launch</li>
+            </ul>
+
+            <a class="accept-link" ng-click="showForm()" ng-href="#application">Yup, I’m cool with this. Take me to the application.</a>
+        </div>
     </div>
-</header>
+</section>
 
-<form name="gform" id="gform" method="POST" ng-submit="isValidForm()"
-      action="https://script.google.com/macros/s/AKfycbyeBSQcoXWiN4z-rpcnMpDWxpIej-HF1KzzQJ_TPC3LFSG4g9o/exec">
-    <fieldset>
-        <label for="name">Name</label>
-        <input id="name" type="text" ng-model="name" name="name"/>
+<section ng-show="triggerForm">
+    <header id="application">
+        <div>
+            <a href="http://www.resilientcoders.org"><img src="logo.png"></a>
+            <h3>Application Form</h3>
+        </div>
+    </header>
 
-        <label for="organization">Organization</label>
-        <input id="organization" type="text" ng-model="organization" name="organization"/>
+    <form name="gform" id="gform" method="POST" ng-submit="isValidForm()"
+          action="https://script.google.com/macros/s/AKfycbyeBSQcoXWiN4z-rpcnMpDWxpIej-HF1KzzQJ_TPC3LFSG4g9o/exec">
+        <fieldset>
+            <label for="name">Name</label>
+            <input id="name" type="text" ng-model="name" name="name"/>
 
-        <label for="email">Email</label>
-        <input id="email" type="email" ng-model="email" name="email"/>
+            <label for="organization">Organization</label>
+            <input id="organization" type="text" ng-model="organization" name="organization"/>
 
-        <label for="telephone">Phone</label>
-        <input id="telephone" type="text" ng-model="telephone" name="telephone"/>
+            <label for="email">Email</label>
+            <input id="email" type="email" ng-model="email" name="email"/>
 
-        <h2>Does your Executive Director approve of this application?</h2>
-        <ul>
-            <li>
-                <input id="approval" type="radio" ng-checked="checked" name="approval" value="Yes"/>
-                <label for="approval" ng-click="checked=true">Yes</label>
-                <div class="check" ng-click="checked=true"></div>
-            </li>
+            <label for="telephone">Phone</label>
+            <input id="telephone" type="text" ng-model="telephone" name="telephone"/>
 
-            <li>
-                <input id="disapproval" type="radio" ng-checked="!checked" name="approval" value="No"/>
-                <label for="disapproval" ng-click="checked=false">No</label>
-                <div class="check" ng-click="checked=false"></div>
-            </li>
-        </ul>
+            <!--        <h3>Does your Executive Director approve of this application?</h3>
+                    <ul>
+                        <li>
+                            <input id="approval" type="radio" ng-checked="checked" name="approval" value="Yes"/>
+                            <label for="approval" ng-click="checked=true">Yes</label>
+                            <div class="check" ng-click="checked=true"></div>
+                        </li>
 
-        <!-- If approval, ng-show-->
+                        <li>
+                            <input id="disapproval" type="radio" ng-checked="!checked" name="approval" value="No"/>
+                            <label for="disapproval" ng-click="checked=false">No</label>
+                            <div class="check" ng-click="checked=false"></div>
+                        </li>
+                    </ul>-->
 
-        <label for="edTelephone" ng-show="checked">Executive Director Telephone: </label>
-        <input type="text" ng-show="checked" id="edTelephone" ng-model="edTelephone" name="edTelephone"/>
-        <label for="edEmail" ng-show="checked">Executive Director Email: </label>
-        <input type="email" ng-show="checked" id="edEmail" ng-model="edEmail" name="edEmail"/>
-    </fieldset>
+            <!-- If approval, ng-show-->
 
-    <fieldset>
-        <h2>Who's our point of contact on this project? (if not you)</h2>
-        <label for="contactEmail">Contact Email</label>
-        <input type="email" id="contactEmail" ng-model="contactEmail"  name="contactEmail"/>
+            <label for="edTelephone" ng-show="checked">Executive Director Telephone: </label>
+            <input type="text" ng-show="checked" id="edTelephone" ng-model="edTelephone" name="edTelephone"/>
+            <label for="edEmail" ng-show="checked">Executive Director Email: </label>
+            <input type="email" ng-show="checked" id="edEmail" ng-model="edEmail" name="edEmail"/>
+        </fieldset>
 
-        <h2>We appreciate answers that are precise and to the point. <br>Please, no more than 500 words.</h2>
-        <h4>Why should we pick your organization? How will building a website or microsite advance your mission in a meaningful way?</h4>
+        <fieldset>
+            <h3>Who's our point of contact on this project? (if not you)</h3>
+            <label for="contactEmail">Contact Email</label>
+            <input type="email" id="contactEmail" ng-model="contactEmail"  name="contactEmail"/>
 
-        <textarea id="whyYou" ng-model="whyYou" maxlength="3000" name="whyYou"></textarea>
-        <button class="hvr-sweep-to-right" type="submit" >Submit Application</button>
-    </fieldset>
-</form>
+            <h3>We appreciate answers that are precise and to the point. <br>Please, no more than 500 words.</h3>
+            <h4>Why should we pick your organization? How will building a website or microsite advance your mission in a meaningful way?</h4>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <textarea id="whyYou" ng-model="whyYou" maxlength="3000" name="whyYou"></textarea>
+            <button class="hvr-sweep-to-right" type="submit" >Submit Application</button>
+        </fieldset>
+    </form>
+</section>
+
+<script>
+    $(function () {
+        $('.tlt').textillate();
+    })
+</script>
 
 <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
 </body>
