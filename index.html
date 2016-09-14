@@ -42,14 +42,18 @@
 
             <h2>Timeline</h2>
             <ul>
-                <li>September 14: The competition launches</li>
-                <li>October 5: Application site closes</li>
-                <li>October 12: Three finalists selected</li>
-                <li>October 17: Public voting campaign commences</li>
-                <li>November 1: Winner announced</li>
-                <li>November 2: Project begins</li>
-                <li>November 4: Winner is available for full day planning session</li>
-                <li>December 16: Website ready to launch</li>
+                <div>
+                    <li>September 14: The competition launches</li>
+                    <li>October 5: Application site closes</li>
+                    <li>October 12: Three finalists selected</li>
+                    <li>October 17: Public voting campaign commences</li>
+                </div>
+                <div>
+                    <li>November 1: Winner announced</li>
+                    <li>November 2: Project begins</li>
+                    <li>November 4: Winner is available for full day planning session</li>
+                    <li>December 16: Website ready to launch</li>
+                </div>
             </ul>
 
             <a class="accept-link" ng-click="showForm()" ng-href="#application">Yup, I’m cool with this. Take me to the application.</a>
@@ -57,11 +61,11 @@
     </div>
 </section>
 
-<section ng-show="triggerForm">
+<section ng-show="triggerForm" class="white-bg">
     <header id="application">
         <div>
             <a href="http://www.resilientcoders.org"><img src="logo.png"></a>
-            <h3>Application Form</h3>
+            <h3>Resilient Rebuild</h3>
         </div>
     </header>
 
@@ -80,23 +84,6 @@
             <label for="telephone">Phone</label>
             <input id="telephone" type="text" ng-model="telephone" name="telephone"/>
 
-            <!--        <h3>Does your Executive Director approve of this application?</h3>
-                    <ul>
-                        <li>
-                            <input id="approval" type="radio" ng-checked="checked" name="approval" value="Yes"/>
-                            <label for="approval" ng-click="checked=true">Yes</label>
-                            <div class="check" ng-click="checked=true"></div>
-                        </li>
-
-                        <li>
-                            <input id="disapproval" type="radio" ng-checked="!checked" name="approval" value="No"/>
-                            <label for="disapproval" ng-click="checked=false">No</label>
-                            <div class="check" ng-click="checked=false"></div>
-                        </li>
-                    </ul>-->
-
-            <!-- If approval, ng-show-->
-
             <label for="edTelephone" ng-show="checked">Executive Director Telephone: </label>
             <input type="text" ng-show="checked" id="edTelephone" ng-model="edTelephone" name="edTelephone"/>
             <label for="edEmail" ng-show="checked">Executive Director Email: </label>
@@ -108,7 +95,7 @@
             <label for="contactEmail">Contact Email</label>
             <input type="email" id="contactEmail" ng-model="contactEmail"  name="contactEmail"/>
 
-            <h3>We appreciate answers that are precise and to the point. <br>Please, no more than 500 words.</h3>
+            <h3>We appreciate answers that are precise and to the point. Please, no more than 500 words.</h3>
             <h4>Why should we pick your organization? How will building a website or microsite advance your mission in a meaningful way?</h4>
 
             <textarea id="whyYou" ng-model="whyYou" maxlength="3000" name="whyYou"></textarea>
@@ -116,12 +103,6 @@
         </fieldset>
     </form>
 </section>
-
-<script>
-    $(function () {
-        $('.tlt').textillate();
-    })
-</script>
 
 <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
 </body>

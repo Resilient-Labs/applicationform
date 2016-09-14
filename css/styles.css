@@ -13,10 +13,13 @@ section {
 section > div > div {
     width: 100%;
     height: 100vh;
-    max-width: 1320px;
+    max-width: 1150px;
     background-color: #fff;
     align-self: center;
-    padding: 0 40px;
+}
+
+.white-bg {
+    background-color: #f2f2f2;
 }
 .resilient-bg {
     background-image: url("../dot-light.a54eeff2.svg"), linear-gradient(90deg, rgba(51, 51, 51, 0.701961) 30%, rgba(51, 51, 51, 0.34902));
@@ -25,7 +28,7 @@ section > div > div {
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 100000;
+    z-index: 1000;
     display: flex;
     justify-content:center;
     background-size: 6px, auto;
@@ -43,7 +46,7 @@ header div {
     align-items: center;
     -webkit-align-items: center;
     flex-flow: row wrap;
-    max-width: 1440px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
@@ -51,9 +54,8 @@ header img {
     height: 100px;
 }
 
-header h2 {
+header h3 {
     color: #fff;
-    margin: 13px 20px;
     align-self: flex-end;
     -webkit-align-self: flex-end;
 }
@@ -76,13 +78,12 @@ h1 {
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #333;
-    font-family: "League Gothic", sans-serif;
+    font-family: "League Gothic", league-gothic, sans-serif;
 }
 
 h2 {
     color: #333;
-    font-family: league-gothic,sans-serif;
-    margin: 0 0 10px;
+    font-family: "League Gothic", league-gothic, sans-serif;
     font-size: 45px;
     max-width: 80%;
     margin: 0 auto;
@@ -101,13 +102,20 @@ h4 {
     font-family: helvetica, sans-serif;
     color: #666;
 }
+ul {
+    display: flex;
+    flex-flow: row wrap;
+}
 
+ul div {
+    width: 50%;
+}
 p, ul {
     font-family: Roboto Slab,sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.95;
     color: #666;
-    margin: 1.5em auto;
+    margin: 1.25em auto;
     max-width: 80%;
 }
 
@@ -162,6 +170,9 @@ form {
     -webkit-justify-content: center;
     align-items: flex-start;
     -webkit-align-items: flex-start;
+    max-width: 1150px;
+    margin: 0 auto;
+    background-color: #fff;
 }
 
 input[type=radio]{
@@ -290,23 +301,26 @@ input[type=radio]:checked ~ label{
 }
 
 button {
-    font-size: 18px;
-    font-family: "Roboto Slab", serif;
-    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 35px;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    font-family: "League Gothic", league-gothic, sans-serif;
     margin: 20px 0;
     font-weight: initial;
     color: #fff;
     min-height: 30px;
     width: 180px;
-    cursor: pointer;
     text-decoration: none;
-    border-radius: 4px;
     outline: none;
-    border: 1px solid;
+    border: none;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
-    background-color: #333;
+    background-color: #ed1b24;
 }
 
 button:hover {
@@ -327,7 +341,6 @@ button:hover {
     transition-property: color;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    border-radius: 4px;
 }
 .hvr-sweep-to-right:before {
     content: "";
@@ -337,7 +350,7 @@ button:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ed1b24;
+    background: #c51017;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0 50%;
@@ -348,16 +361,13 @@ button:hover {
     transition-duration: 0.3s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    border-radius: 4px;
 }
 .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
     color: #fff;
-    border-radius: 4px;
 }
 .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    border-radius: 4px;
 }
 
 
@@ -384,6 +394,14 @@ button:hover {
 }
 
 @media all and (min-width: 240px) and (max-width:640px) {
+    body {
+        background-color: #fff;
+    }
+
+    section {
+        height: 220vh;
+        max-height: 2000px;
+    }
     input[type="text"], input[type="email"] {
         width: 96%;
     }
