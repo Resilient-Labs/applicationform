@@ -1,91 +1,53 @@
 body {
     margin: 0;
     padding: 0;
+    top: 0;
+    left: 0;
     background-color: #333;
+    background-image: url("../dot-light.a54eeff2.svg"), linear-gradient(90deg, rgba(51, 51, 51, 0.701961) 30%, rgba(51, 51, 51, 0.34902));
+    background-size: 6px, auto;
     overflow-x: hidden;
+    width: 100%;
 }
 
 section {
+    margin: 0 auto;
+    max-width: 1150px;
     width: 100vw;
-    height: 100vh;
 }
 
-section > div > div {
+section > div {
+    padding: 0 10%;
     width: 100%;
-    height: 100vh;
-    max-width: 1150px;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 80%;
     background-color: #fff;
     align-self: center;
-}
-
-.white-bg {
-    background-color: #f2f2f2;
-}
-.resilient-bg {
-    background-image: url("../dot-light.a54eeff2.svg"), linear-gradient(90deg, rgba(51, 51, 51, 0.701961) 30%, rgba(51, 51, 51, 0.34902));
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content:center;
-    background-size: 6px, auto;
-}
-
-header {
-    background-color: #ed1b24;
-    padding: 0 10px;
-}
-
-header div {
-    display: flex;
-    justify-content: flex-start;
-    -webkit-justify-content: flex-start;
-    align-items: center;
-    -webkit-align-items: center;
-    flex-flow: row wrap;
-    max-width: 1150px;
-    margin: 0 auto;
-}
-
-header img {
-    height: 100px;
-}
-
-header h3 {
-    color: #fff;
-    align-self: flex-end;
-    -webkit-align-self: flex-end;
 }
 
 a {
     color: #ed1b24;
     font-size: 17px;
-    line-height: 1.95;
-}
-
-.accept-link {
     font-family: "Roboto Slab", serif;
-    padding: 0 10%;
+    line-height: 1.95;
 }
 
 h1 {
     font-size: 64px;
-    margin: 20px 0;
+    padding: 20px 0;
     line-height: 1.1;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #333;
     font-family: "League Gothic", league-gothic, sans-serif;
+    margin:0 auto;
 }
 
 h2 {
     color: #333;
     font-family: "League Gothic", league-gothic, sans-serif;
     font-size: 45px;
-    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -96,27 +58,21 @@ h3 {
     margin-bottom: .95em;
     margin-top: 0;
     color: #333;
+    max-width: 640px;
 }
 
 h4 {
     font-family: helvetica, sans-serif;
     color: #666;
-}
-ul {
-    display: flex;
-    flex-flow: row wrap;
+    max-width: 640px;
 }
 
-ul div {
-    width: 50%;
-}
 p, ul {
     font-family: Roboto Slab,sans-serif;
     font-size: 16px;
     line-height: 1.95;
     color: #666;
     margin: 1.25em auto;
-    max-width: 80%;
 }
 
 fieldset {
@@ -124,8 +80,11 @@ fieldset {
     margin: 2em 1em;
     border: none;
     display: flex;
-    width: 45%;
-    max-width: 680px;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    max-width: 1150px;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
     align-items: flex-start;
@@ -157,13 +116,21 @@ input[type="text"].ng-valid.ng-touched, input[type="email"].ng-valid.ng-touched 
 
 
 textarea {
+    display: block;
     width: 100%;
-    height: 160px;
+    max-width: 640px;
+    height: 200px;
     resize: none;
+    padding: 10px 9px;
+    font-family: "Roboto Slab", serif;
 }
 
 form {
     display: flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     flex-flow: row wrap;
     -webkit-flex-flow: row wrap;
     justify-content: center;
@@ -184,92 +151,8 @@ label {
     margin: 10px 0;
     color: #666;
     margin-top: 0;
-}
-
-/*ul {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-ul li {
-    display: flex;
-    flex-flow: row-reverse;
-    -webkit-flex-flow: row-reverse;
-    justify-content: center;
-    -webkit-justify-content: center;
-    align-items: center;
-    -webkit-align-items: center;
-}
-
-ul li label{
     display: block;
-    font-weight: 300;
-    font-size: 1.35em;
-    padding: 10px;
-    margin: 10px;
-    z-index: 9;
-    cursor: pointer;
-    -webkit-transition: all 0.25s linear;
 }
-
-ul li:hover label{
-    color: #333;
-}
-
-ul li .check{
-    display: flex;
-    border: 5px solid #AAAAAA;
-    border-radius: 100%;
-    height: 25px;
-    width: 25px;
-    top: 30px;
-    left: 20px;
-    z-index: 5;
-    transition: border .25s linear;
-    -webkit-transition: border .25s linear;
-}
-
-ul li:hover .check {
-    border: 5px solid #333;
-    cursor: pointer;
-}
-
-ul li .check::before {
-    display: flex;
-    content: '';
-    align-self: center;
-    -webkit-align-self: center;
-    border-radius: 100%;
-    height: 15px;
-    width: 15px;
-    top: 5px;
-    left: 5px;
-    margin: auto;
-    transition: background 0.25s linear;
-    -webkit-transition: background 0.25s linear;
-}*/
-
-/*.timeline {
-    width: 100%;
-    max-width: 80%;
-    margin: 20px auto;
-}
-
-.timeline li {
-    background-color: grey;
-    height: 100px;
-    width: 12.5%;
-    overflow: hidden;
-    padding: 5px;
-    font-family: "Roboto Slab", serif;
-    border: 1px solid #fff;
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
-}*/
 
 label{
     font-family: "Bitter", "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -383,23 +266,25 @@ button:hover {
 
     button {
         width: 100%;
-        max-width: 666px;;
+        max-width: 360px;;
         height: 50px;
         font-size: 1.5em;
+        padding: 10px 0;
     }
 
     textarea {
         font-size: 1.3em;
+        padding: 10px;
     }
 }
 
 @media all and (min-width: 240px) and (max-width:640px) {
+
     body {
         background-color: #fff;
     }
 
     section {
-        height: 220vh;
         max-height: 2000px;
     }
     input[type="text"], input[type="email"] {
@@ -408,30 +293,30 @@ button:hover {
 
     fieldset {
         width: 100%;
-        margin: 2em 1em 0 1em;
+        max-width: 360px;
+        margin: 2em auto;
+        padding: 10px 0;
     }
 
-    header div {
-        justify-content: space-around;
-        -webkit-justify-content: space-around;
-    }
-
-    header img {
-        height: 5em;
+    h1 {
+        font-size: 3em;
     }
 
     h2 {
-        font-size: 1.25em;
+        font-size: 2.4em;
     }
 
     textarea {
         height: 300px;
+        padding: 0;
         font-size: 1.1em;
     }
 
     button {
         height: 3em;
-        width: 240px;
+        padding: 0;
+        width: 100%;
+        min-width: 180px;
         margin: 2em auto;
     }
 }
