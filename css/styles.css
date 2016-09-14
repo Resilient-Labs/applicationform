@@ -123,6 +123,7 @@ textarea {
     resize: none;
     padding: 10px 9px;
     font-family: "Roboto Slab", serif;
+    color: #666;
 }
 
 form {
@@ -183,6 +184,16 @@ input[type=radio]:checked ~ label{
     text-align: center;
 }
 
+.red-color {
+    color: #ed1b24;
+}
+
+#thankyou_message {
+    display: none;
+    padding: 60px 10%;
+    height: 100vh;
+    margin: auto;
+}
 button {
     cursor: pointer;
     display: inline-block;

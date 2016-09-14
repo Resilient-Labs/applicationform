@@ -36,9 +36,10 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
             console.log( xhr.status, xhr.statusText )
-            console.log(xhr.responseText);/*
-            document.getElementById('gform').style.display = 'none'; // hide form
-            document.getElementById('thankyou_message').style.display = 'block';*/
+            console.log(xhr.responseText);
+            document.getElementById('info').style.display = 'none'; // hide form
+            document.getElementById('form').style.display = 'none'; // hide form
+            document.getElementById('thankyou_message').style.display = 'block';
             return;
         };
         // url encode form data for sending as post data
